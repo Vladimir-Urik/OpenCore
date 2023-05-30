@@ -1,0 +1,35 @@
+plugins {
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '7.1.2'
+}
+
+group = 'lol.gggedr.opencore'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    maven {
+        name = "papermc-repo"
+        url = "https://repo.papermc.io/repository/maven-public/"
+    }
+    maven {
+        name = "sonatype"
+        url = "https://oss.sonatype.org/content/groups/public/"
+    }
+    maven {
+        url = 'https://repo.extendedclip.com/content/repositories/placeholderapi/'
+    }
+}
+
+dependencies {
+    compileOnly "com.destroystokyo.paper:paper-api:1.12.2-R0.1-SNAPSHOT"
+    compileOnly 'me.clip:placeholderapi:2.11.3'
+    compileOnly 'net.luckperms:api:5.4'
+    implementation 'org.reflections:reflections:0.10.2'
+
+    implementation project(':api')
+    implementation project(':common')
+}
+
+apply from: "tasks.gradle"
+apply from: "testplugin.gradle"

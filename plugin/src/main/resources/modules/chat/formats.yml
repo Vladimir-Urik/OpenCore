@@ -1,0 +1,1 @@
+default: "%luckperms_prefix% &7%player_name% &8» &7%message%"

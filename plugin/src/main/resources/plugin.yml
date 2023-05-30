@@ -1,0 +1,10 @@
+name: OpenCore
+version: '${version}'
+main: lol.gggedr.opencore.OpenCore
+prefix: OpenCore
+authors: [ GGGEDR ]
+website: opencore.gggedr.lol
+depend:
+  - PlaceholderAPI
+softdepend:
+  - LuckPerms

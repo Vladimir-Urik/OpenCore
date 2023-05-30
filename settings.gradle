@@ -1,0 +1,7 @@
+rootProject.name = 'OpenCore'
+
+// Subprojects
+include 'plugin'
+include 'api'
+include 'common'
+
