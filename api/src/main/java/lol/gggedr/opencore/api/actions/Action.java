@@ -13,6 +13,6 @@ public interface Action {
         return new ArrayList<>();
     }
 
-    void execute(ActionCtx<Object> ctx);
+    void execute(ActionCtx<?> ctx);
 
 }

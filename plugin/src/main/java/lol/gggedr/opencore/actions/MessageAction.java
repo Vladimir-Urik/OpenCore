@@ -22,7 +22,7 @@ public class MessageAction implements Action {
     }
 
     @Override
-    public void execute(ActionCtx<Object> ctx) {
+    public void execute(ActionCtx<?> ctx) {
         if(ctx.isPlayer()) {
             Player p = ctx.asPlayer().getObject();
             ctx.sendMessage(PlaceholderAPI.setPlaceholders(p, ctx.getData()));

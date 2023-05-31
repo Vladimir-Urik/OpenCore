@@ -2,6 +2,7 @@ package lol.gggedr.opencore.lists;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.stream.Collector;
 
 public class OpenList<T> extends ArrayList<T> {
 

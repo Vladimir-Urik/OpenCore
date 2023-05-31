@@ -16,7 +16,7 @@ public class ConsoleAction implements Action {
     }
 
     @Override
-    public void execute(ActionCtx<Object> ctx) {
+    public void execute(ActionCtx<?> ctx) {
         Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), ctx.getData());
     }
 

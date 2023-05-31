@@ -23,7 +23,7 @@ public class CommandAction implements Action {
     }
 
     @Override
-    public void execute(ActionCtx<Object> ctx) {
+    public void execute(ActionCtx<?> ctx) {
         if(!ctx.isPlayer() && !ctx.isConsole()) {
             throw new RuntimeException("Command action can only be executed by a player or console.");
         }
