@@ -32,12 +32,18 @@ public interface Module {
     }
 
     default YamlConfiguration getConfiguration(String name) {
+        File file = getConfigurationFile(name);
+
+        return YamlConfiguration.loadConfiguration(file);
+    }
+
+    default File getConfigurationFile(String name) {
         File file = new File(getModuleFolder() + File.separator + name);
         if (!file.exists()) {
             getPlugin().saveResource("modules" + File.separator + getName() + File.separator + name, false);
         }
 
-        return YamlConfiguration.loadConfiguration(file);
+        return file;
     }
 
     default void copyAllConfiguration() {

@@ -1,0 +1,8 @@
+type: sqlite # MySQL or SQLite or PostgresSQL
+
+# MySQL/PostgresSQL Settings
+host: localhost
+port: 3306
+database: minecraft
+username: root
+password: 'password'

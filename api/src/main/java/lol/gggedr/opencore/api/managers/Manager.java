@@ -1,7 +1,9 @@
 package lol.gggedr.opencore.api.managers;
 
 import lol.gggedr.opencore.api.OpenCoreInstance;
+import org.bukkit.configuration.file.YamlConfiguration;
 
+import java.io.File;
 import java.util.List;
 
 public interface Manager {
@@ -37,6 +39,15 @@ public interface Manager {
      */
     default <T extends Manager> T getManager(Class<T> clazz) {
         return Managers.getManager(clazz);
+    }
+
+    default YamlConfiguration getConfiguration(String name) {
+        File file = new File(getPlugin().getDataFolder() + File.separator + name);
+        if (!file.exists()) {
+            getPlugin().saveResource(name, false);
+        }
+
+        return YamlConfiguration.loadConfiguration(file);
     }
 
 }
